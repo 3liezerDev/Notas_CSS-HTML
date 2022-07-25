@@ -1,0 +1,196 @@
+/* tres formas diferentes de aplicar CSS 
+
+**EN LINEA** style como atributo también
+**IMPORT**
+**ENLACE** la más a propiada y ordenada para trabajar
+
+es importante verificar que la página web se vea de igual manera 
+en todos los navegadores para eso se puede usar un cdnjs o normalize.css
+
+    SINTAXIS 
+
+
+    SELECTORES:  
+
+nos permiten identificar las etiquetas que 
+queremos estilizar */
+/* 
+
+Selector
+{
+    propiedad:valor;
+} 
+
+*/
+
+/* <style> */
+    p {                 /*Selector para etiqueta*/
+      color: blue;
+      font-size: 25px;
+    }
+    .clase-texto {      /*selector para clase .clase_name*/
+      color: red;
+      font-size: 25px;
+    }
+    #texto-unico {      /*Selector para id #id_name*/
+      color: green;
+      font-size: 25px;
+    }
+    .clase-texto span {  /*seleccionar etiqueta hijo*/
+      color: purple;
+      font-size: 25px;
+    }
+    p,                   /*seleccionar más de una etiqueta*/
+    span {              
+      text-decoration: underline;
+    }
+/* </style> */
+/* 
+    SELECTORES
+
+    "*" Selector universal selecciona todos los elementos
+
+    "de tipo" lo que seleccionamos por etiquetas
+
+    "Clases" se selecciona colocando un "." y el nombre de
+    la clase
+
+    "ID" se seleccionan los id colocando "#" y el nombre del id
+
+    "Atribute" se selecciona utilizando "[atb="valor"]" entre corchetes
+
+    "descendiente" (hijos) se coloca la tag padre y luego la tag hijo
+    para seleccionar especificamente ej:
+    "body header tittle {}"
+
+    "pseudo clase" es una palabra clave que se añade a los selectores y que especifica un estado especial del elemento seleccionado. Por ejemplo,  :hover aplicará un estilo cuando el usuario haga hover sobre el elemento especificado por el selector
+
+    p[title] selecciona todas las etiquetas p que tienen el atributo title
+
+    p > div selecciona la etiqueta div que es hija de un a etiqueta p 
+
+    button:hover selecciona el botón cuando el cursor está sobre el botón
+
+    div::after selecciona una etiqueta 'ficticia' que se crea después de 
+    elemento div
+ */
+
+ 
+/* 
+    ESPECIFICIDAD:
+
+    La especificidad es la manera mediante la cual los navegadores deciden qué valores de una propiedad CSS son más relevantes para un elemento y, por lo tanto, serán aplicados. La especificidad está basada en las reglas de coincidencia que están compuestas por diferentes tipos de selectores CSS.
+
+  Rangos de jerarquía
+
+  5- pseudo_elementos y elementos (etiquetas) "menos importante"
+  4- clases, pseudo_clases, atributos
+  3- identificadores
+  2- estilos en línea
+  1- !important       "más importante"
+
+
+*/
+
+/* 
+  Metodología BEM (modificador de bloques de elementos):
+
+ <form class="contact form">
+    <input type="text" class="form__input">
+    <input type="text" class="form__input">
+    <input type="text" class="form__input">
+    <input type="text" class="form__input">
+    <input type="text" class="form__input">
+  </form>
+
+CSS:
+  .form__input:first-child    "afecta el primer hijo"
+{
+    color:brown;
+}
+*/
+
+/* 
+    MEDIDAS:
+  
+  Relativas: medidas que dependen de algo y son variables
+  se pueden adaptar a diferentes dispositivos con pantallas de diferente tamaño. REM, EM, VH, VW, %.
+
+  La unidad EM tiene como referencia de medida el font-size del elemento actual.
+
+  1em= 16px por defecto
+  1em= valor de la tag contenedora
+
+  La unidad rem tiene como referencia de medida el  font-size del elemento root, la etiqueta <html> (en  inglés sería como "root em") que es elemento de raiz.
+
+ 
+
+  Fijas: medidas especificas que no cambian
+  
+*/
+
+ /* formas de agregar padding y en que dirección se aplica arriba abajo */  
+    /* <head>
+    <style> */
+      body {
+        margin: 0;
+      }
+      div,
+      span {
+        background: red;
+        /* Arriba Derecha Abajo Izquierda */
+        /* padding: 100px 20px 30px 80px; */
+        /* A DI A */
+        /* padding: 100px 40px 30px; */
+        /* AA DI */
+        /* padding: 100px 40px; */
+        /* AADR */
+        padding: 10px;
+
+        margin: 1px 20px 40px 5px;
+        display: inline-block;
+      }
+    /* </style> 
+     </head>*/
+
+/*   PROPIEDADES DE TIPOGRAFIA:
+
+font-size: 2em;           
+"Tamaño de letra"   
+
+font-family: Georgia";     
+"Tipografía"
+
+line-height: 1;          
+" un line height nace del centro de la letra y ocupa 1/2 del tamaño de la letra hacia arriba y 1/2 hacia abajo, como el tamaño de la linea de un cuaderno"
+
+font-weight: normal;
+"Grosor de la letra"
+
+color:red;
+"cambia el color de la letra"
+
+*** para buscar un tipo de tipografía se pueden encontrar en google fonts***
+
+*/
+
+/* 
+    RESET CSS 
+  Usar normalize.css
+  descargar documento y añadirlo en el archivo css
+
+  ej.
+
+  <link rel="stylesheet.css"  type="text/css"  href="reset-css.css">
+
+
+  
+  IMPLEMENTAR TIPOGRAFIAS GOOGLE FONTS:
+
+  Agrega un vínculo de hoja de estilo para solicitar las fuentes web deseadas:
+
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Font+Name">
+
+
+*/
